@@ -13,105 +13,167 @@ struct Home_View: View {
     let propertiesList : [Property] = [
     
     Property(
-        timestamp: Date().description,
+        id: "kndlkjsdnvfsdfxcbnlkdfn",
+        timestamp: Date(),
         date: Date().description,
-        author: "author",
+        author: "Uhoh",
         authorEmail: "author email",
         authorPhone: "0-000-000-0000",
-        title: "title",
+        title: "1429 Ethiopia Drive",
         price: 999999,
         approved: true,
         expired: false,
-        sold: false),
+        sold: false,
+        imageUrl: "panther_1"),
     
     Property(
-        timestamp: Date().description,
+        id: "kndlkjsdnvfsertdfnlkdfn",
+        timestamp: Date(),
         date: Date().description,
-        author: "author",
+        author: "Abi",
         authorEmail: "author email",
         authorPhone: "0-000-000-0000",
-        title: "title",
+        title: "149 Kemet Drive",
         price: 999999,
         approved: true,
         expired: false,
-        sold: false),
+        sold: false,
+        imageUrl: "panther_1"),
     
     Property(
-        timestamp: Date().description,
+        id: "kndlkjsdnvfsdfgbdfnlkdfn",
+        timestamp: Date(),
         date: Date().description,
-        author: "author",
+        author: "Nkrumba",
         authorEmail: "author email",
         authorPhone: "0-000-000-0000",
-        title: "title",
+        title: "7352 Thebes Road",
         price: 999999,
         approved: true,
         expired: false,
-        sold: false),
+        sold: false,
+        imageUrl: "panther_1"),
     
     Property(
-        timestamp: Date().description,
+        id: "kndlkjsdnvfsdsdfnlkdfn",
+        timestamp: Date(),
         date: Date().description,
-        author: "author",
+        author: "Garvey",
         authorEmail: "author email",
         authorPhone: "0-000-000-0000",
-        title: "title",
+        title: "Somali Land, Apt. 18 B",
         price: 999999,
         approved: true,
         expired: false,
-        sold: false),
+        sold: false,
+        imageUrl: "panther_1"),
     
     Property(
-        timestamp: Date().description,
+        id: "kndlkjsdnvfsdnhngffnlkdfn",
+        timestamp: Date(),
         date: Date().description,
-        author: "author",
+        author: "Patrice",
         authorEmail: "author email",
         authorPhone: "0-000-000-0000",
-        title: "title",
+        title: "1010 Duce Drive",
         price: 999999,
         approved: true,
         expired: false,
-        sold: false),
+        sold: false,
+        imageUrl: "panther_1"),
     
     Property(
-        timestamp: Date().description,
+        id: "kndlkjsdnvfsfhfddfnlkdfn",
+        timestamp: Date(),
         date: Date().description,
-        author: "author",
+        author: "Guevera",
         authorEmail: "author email",
         authorPhone: "0-000-000-0000",
-        title: "title",
+        title: "1818 Liberation Square",
         price: 999999,
         approved: true,
         expired: false,
-        sold: false),
+        sold: false,
+        imageUrl: "panther_1"),
     
     Property(
-        timestamp: Date().description,
+        id: "kndlkjsdnvfsdfnlkddfvfn",
+        timestamp: Date(),
         date: Date().description,
-        author: "author",
+        author: "Ramephese",
         authorEmail: "author email",
         authorPhone: "0-000-000-0000",
-        title: "title",
+        title: "Garvey Stoop",
         price: 999999,
         approved: true,
         expired: false,
-        sold: false),
-    
-    
+        sold: false,
+        imageUrl: "panther_1"),
     ]
     
-    
-    
-    
-    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ScrollView {
+            ForEach(propertiesList) { item in
+                PropertyWidget(id: item.id,timestamp: item.timestamp, date: item.date, author: item.author, authorEmail: item.authorEmail, authorPhone: item.authorPhone, title: item.title, price: item.price, approved: item.approved, expired: item.expired, sold: item.sold, imageUrl: item.imageUrl)
+            }
+        }
+        
     }
 }
 
 struct PropertyWidget : View {
     
+    @State var id : String
+    @State var timestamp : Date
+    @State var date : String
+    
+    @State var author : String
+    @State var authorEmail : String?
+    @State var authorPhone : String
+    @State var title : String
+    @State var price : Int
+    @State var approved : Bool
+    @State var expired : Bool
+    @State var sold : Bool
+    @State var imageUrl : String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                
+        NavigationLink(destination: PropertyDetail_View(id: $id,timestamp: $timestamp, date: $date, author: $author, authorEmail: $authorEmail, authorPhone: $authorPhone, title: $title, price: $price, approved: $approved, expired: $expired, sold: $sold, imageUrl: $imageUrl)) {
+            
+            
+            VStack {
+                VStack {
+                    Image(imageUrl)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+                
+                HStack {
+                    VStack{
+                        Spacer()
+                        Text(title)
+                        Spacer()
+                        Text(author)
+                        Spacer()
+                    }
+                    .padding()
+                    Spacer()
+                    VStack{
+                        Spacer()
+                        Text("00/00/00")
+                        Spacer()
+                        Text(String(price))
+                        Spacer()
+                    }
+                    .padding()
+                }
+            }
+            
+        }
+        
+        
     }
     
     
@@ -119,9 +181,11 @@ struct PropertyWidget : View {
 }
 
 
-struct Property {
+struct Property : Identifiable {
+    var id: String
     
-    let timestamp : String
+    
+    let timestamp : Date
     let date : String
     
     let author : String
@@ -132,6 +196,7 @@ struct Property {
     let approved : Bool
     let expired : Bool
     let sold : Bool
+    let imageUrl : String
     
 }
 
