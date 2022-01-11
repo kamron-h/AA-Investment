@@ -43,6 +43,7 @@ struct NavView: View {
                 }
             }
         }
+        .navigationTitle(Text("Navigation"))
     }
 }
 

@@ -24,7 +24,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "panther_1"),
+        imageUrl: "mobile_1"),
     
     Property(
         id: "kndlkjsdnvfsertdfnlkdfn",
@@ -38,7 +38,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "panther_1"),
+        imageUrl: "mobile_2"),
     
     Property(
         id: "kndlkjsdnvfsdfgbdfnlkdfn",
@@ -52,7 +52,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "panther_1"),
+        imageUrl: "mobile_3"),
     
     Property(
         id: "kndlkjsdnvfsdsdfnlkdfn",
@@ -66,7 +66,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "panther_1"),
+        imageUrl: "mobile_0"),
     
     Property(
         id: "kndlkjsdnvfsdnhngffnlkdfn",
@@ -80,7 +80,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "panther_1"),
+        imageUrl: "mobile_1"),
     
     Property(
         id: "kndlkjsdnvfsfhfddfnlkdfn",
@@ -94,7 +94,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "panther_1"),
+        imageUrl: "mobile_2"),
     
     Property(
         id: "kndlkjsdnvfsdfnlkddfvfn",
@@ -108,7 +108,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "panther_1"),
+        imageUrl: "mobile_3"),
     ]
     
     var body: some View {
@@ -198,9 +198,8 @@ struct PropertyWidget : View {
         .cornerRadius(12)
         .padding(5)
         .clipped()
-        
+        .navigationBarTitle(Text("Properties"))
     }
-    
     
     
 }
