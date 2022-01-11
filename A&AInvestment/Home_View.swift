@@ -154,8 +154,10 @@ struct PropertyWidget : View {
                     VStack{
                         Spacer()
                         Text(title)
+                            .foregroundColor(.black)
                         Spacer()
                         Text(author)
+                            .foregroundColor(.black)
                         Spacer()
                     }
                     .padding()
@@ -163,16 +165,20 @@ struct PropertyWidget : View {
                     VStack{
                         Spacer()
                         Text("00/00/00")
+                            .foregroundColor(.black)
                         Spacer()
                         Text(String(price))
+                            .foregroundColor(.green)
                         Spacer()
                     }
                     .padding()
                 }
+                .background(Color.gray)
             }
             
         }
-        
+        .padding(5)
+        .clipped()
         
     }
     

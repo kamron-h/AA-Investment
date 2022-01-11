@@ -11,13 +11,36 @@ struct NavView: View {
     var body: some View {
         NavigationView {
             
-            
-            NavigationLink(destination: Home_View()) {
-                Text("Home")
-            }
-            
-            NavigationLink(destination: NewInvestment_View()) {
-                Text("Submit a Property")
+            List {
+                NavigationLink(destination: Home_View()) {
+                    Text("View Properties")
+                        .bold()
+                }
+                
+                NavigationLink(destination: NewInvestment_View()) {
+                    Text("Submit a Property")
+                        .bold()
+                }
+                
+                NavigationLink(destination: NewInvestment_View()) {
+                    Text("Review/Approval")
+                        .bold()
+                }
+                
+                NavigationLink(destination: NewInvestment_View()) {
+                    Text("Terms of Service")
+                        .bold()
+                }
+                
+                NavigationLink(destination: NewInvestment_View()) {
+                    Text("Contact Us")
+                        .bold()
+                }
+                
+                NavigationLink(destination: NewInvestment_View()) {
+                    Text("Sign In / Sign Up")
+                        .bold()
+                }
             }
         }
     }
@@ -26,5 +49,6 @@ struct NavView: View {
 struct NavView_Previews: PreviewProvider {
     static var previews: some View {
         NavView()
+            .preferredColorScheme(.dark)
     }
 }
