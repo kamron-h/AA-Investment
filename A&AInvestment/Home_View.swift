@@ -149,34 +149,53 @@ struct PropertyWidget : View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                
+                Spacer(minLength: -0.1)
                 HStack {
                     VStack{
                         Spacer()
                         Text(title)
+                            .bold()
                             .foregroundColor(.black)
+                            .multilineTextAlignment(.center)
+                            .frame(minWidth: 140, maxWidth: .infinity, alignment: .center)
+//                            .background(.white)
+                            .padding(5)
                         Spacer()
-                        Text(author)
-                            .foregroundColor(.black)
+                        HStack {
+                            Text(author)
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                                .frame(minWidth: 140, maxWidth: .infinity, alignment: .leading)
+//                                .background(.white)
+                                .padding(.leading, 15)
+                        }
                         Spacer()
                     }
-                    .padding()
+                    
                     Spacer()
                     VStack{
                         Spacer()
                         Text("00/00/00")
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
+                            .frame(minWidth: 50, maxWidth: 100, alignment: .center)
+//                            .background(.white)
+                            .padding(.trailing, 3)
                         Spacer()
                         Text(String(price))
+                            .bold()
                             .foregroundColor(.green)
+                            .frame(minWidth: 50, maxWidth: 100, alignment: .center)
+//                            .background(.white)
+                            .padding(.trailing, 3)
                         Spacer()
                     }
-                    .padding()
+                    .padding(5)
                 }
                 .background(Color.gray)
             }
             
         }
+        .cornerRadius(12)
         .padding(5)
         .clipped()
         
@@ -210,5 +229,6 @@ struct Property : Identifiable {
 struct Home_View_Previews: PreviewProvider {
     static var previews: some View {
         Home_View()
+            .preferredColorScheme(.dark)
     }
 }
