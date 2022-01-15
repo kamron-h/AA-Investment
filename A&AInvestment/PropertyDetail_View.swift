@@ -14,14 +14,14 @@ struct PropertyDetail_View: View {
     @Binding var date : String
     
     @Binding var author : String
-    @Binding var authorEmail : String?
+    @Binding var authorEmail : String
     @Binding var authorPhone : String
     @Binding var title : String
     @Binding var price : Int
     @Binding var approved : Bool
     @Binding var expired : Bool
     @Binding var sold : Bool
-    @Binding var imageUrl : String
+    @Binding var imageUrl : [String]//chsnge to urls
     
     
     var body: some View {
@@ -30,7 +30,7 @@ struct PropertyDetail_View: View {
             
             VStack {
                 VStack {
-                    Image(imageUrl)
+                    Image(imageUrl[0])
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
@@ -112,7 +112,7 @@ struct PropertyDetail_View: View {
 
 struct PropertyDetail_View_Previews: PreviewProvider {
     static var previews: some View {
-        PropertyDetail_View(id: .constant("id"), timestamp: .constant(Date()), date: .constant("Date"), author: .constant("Date"), authorEmail: .constant("true"), authorPhone: .constant("Date"), title: .constant("Date"), price: .constant(9999), approved: .constant(true), expired: .constant(true), sold: .constant(true), imageUrl: .constant("Date"))
+        PropertyDetail_View(id: .constant("id"), timestamp: .constant(Date()), date: .constant("Date"), author: .constant("Date"), authorEmail: .constant("true"), authorPhone: .constant("Date"), title: .constant("Date"), price: .constant(9999), approved: .constant(true), expired: .constant(true), sold: .constant(true), imageUrl: .constant(["Date"]))
             .preferredColorScheme(.dark)
     }
 }

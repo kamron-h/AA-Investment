@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Home_View: View {
+struct Properties_View: View {
     
     
     let propertiesList : [Property] = [
@@ -24,7 +24,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "mobile_1"),
+        imageUrl: ["mobile_1"]),
     
     Property(
         id: "kndlkjsdnvfsertdfnlkdfn",
@@ -38,7 +38,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "mobile_2"),
+        imageUrl: ["mobile_2"]),
     
     Property(
         id: "kndlkjsdnvfsdfgbdfnlkdfn",
@@ -52,7 +52,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "mobile_3"),
+        imageUrl: ["mobile_3"]),
     
     Property(
         id: "kndlkjsdnvfsdsdfnlkdfn",
@@ -66,7 +66,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "mobile_0"),
+        imageUrl: ["mobile_0"]),
     
     Property(
         id: "kndlkjsdnvfsdnhngffnlkdfn",
@@ -80,7 +80,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "mobile_1"),
+        imageUrl: ["mobile_1"]),
     
     Property(
         id: "kndlkjsdnvfsfhfddfnlkdfn",
@@ -94,7 +94,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "mobile_2"),
+        imageUrl: ["mobile_2"]),
     
     Property(
         id: "kndlkjsdnvfsdfnlkddfvfn",
@@ -108,7 +108,7 @@ struct Home_View: View {
         approved: true,
         expired: false,
         sold: false,
-        imageUrl: "mobile_3"),
+        imageUrl: ["mobile_3"]),
     ]
     
     var body: some View {
@@ -129,14 +129,14 @@ struct PropertyWidget : View {
     @State var date : String
     
     @State var author : String
-    @State var authorEmail : String?
+    @State var authorEmail : String
     @State var authorPhone : String
     @State var title : String
     @State var price : Int
     @State var approved : Bool
     @State var expired : Bool
     @State var sold : Bool
-    @State var imageUrl : String
+    @State var imageUrl : [String]
     
     var body: some View {
                 
@@ -145,9 +145,9 @@ struct PropertyWidget : View {
             
             VStack {
                 VStack {
-                    Image(imageUrl)
+                    Image(imageUrl[0])
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
+                        .aspectRatio(contentMode: .fill)
                 }
                 Spacer(minLength: -0.1)
                 HStack {
@@ -213,21 +213,21 @@ struct Property : Identifiable {
     let date : String
     
     let author : String
-    let authorEmail : String?
+    let authorEmail : String
     let authorPhone : String
     let title : String
     let price : Int
     let approved : Bool
     let expired : Bool
     let sold : Bool
-    let imageUrl : String
+    let imageUrl : [String]
     
 }
 
 
 struct Home_View_Previews: PreviewProvider {
     static var previews: some View {
-        Home_View()
+        Properties_View()
             .preferredColorScheme(.dark)
     }
 }

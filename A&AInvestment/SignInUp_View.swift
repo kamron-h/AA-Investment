@@ -1,20 +1,20 @@
 //
-//  NewInvestment_View.swift
+//  SignInUp_View.swift
 //  A&AInvestment
 //
-//  Created by Kamron Hopkins on 1/10/22.
+//  Created by Kamron Hopkins on 1/12/22.
 //
 
 import SwiftUI
 
-struct NewInvestment_View: View {
+struct SignInUp_View: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct NewInvestment_View_Previews: PreviewProvider {
+struct SignInUp_View_Previews: PreviewProvider {
     static var previews: some View {
-        NewInvestment_View()
+        SignInUp_View()
     }
 }

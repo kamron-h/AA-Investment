@@ -10,37 +10,38 @@ import SwiftUI
 struct NavView: View {
     var body: some View {
         NavigationView {
-            
             List {
-                NavigationLink(destination: Home_View()) {
+                Spacer()
+                NavigationLink(destination: Properties_View()) {
                     Text("View Properties")
                         .bold()
                 }
                 
-                NavigationLink(destination: NewInvestment_View()) {
+                NavigationLink(destination: Submission_View()) {
                     Text("Submit a Property")
                         .bold()
                 }
                 
-                NavigationLink(destination: NewInvestment_View()) {
+                NavigationLink(destination: ReviewApproval_View()) {
                     Text("Review/Approval")
                         .bold()
                 }
                 
-                NavigationLink(destination: NewInvestment_View()) {
+                NavigationLink(destination: TermsOfService_View()) {
                     Text("Terms of Service")
                         .bold()
                 }
                 
-                NavigationLink(destination: NewInvestment_View()) {
+                NavigationLink(destination: ContactUs_View()) {
                     Text("Contact Us")
                         .bold()
                 }
                 
-                NavigationLink(destination: NewInvestment_View()) {
+                NavigationLink(destination: SignInUp_View()) {
                     Text("Sign In / Sign Up")
                         .bold()
                 }
+                Spacer()
             }
         }
         .navigationTitle(Text("Navigation"))
