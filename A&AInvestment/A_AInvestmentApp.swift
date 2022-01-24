@@ -15,7 +15,7 @@ struct A_AInvestmentApp: App {
         WindowGroup {
 //            ContentView()
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            NavView()
+            NavTabView()
         }
     }
 }
