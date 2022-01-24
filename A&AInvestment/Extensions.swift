@@ -1,5 +1,5 @@
 //
-//  Extentions.swift
+//  Extensions.swift
 //  A&AInvestment
 //
 //  Created by Kamron Hopkins on 1/12/22.

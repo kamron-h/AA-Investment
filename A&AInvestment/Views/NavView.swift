@@ -11,19 +11,27 @@ struct NavView: View {
     var body: some View {
         NavigationView {
             List {
-                Spacer()
-                NavigationLink(destination: Properties_View()) {
-                    Text("View Properties")
+                NavigationLink(destination: EditProfileView()) {
+                    Text("Edit Profile")
                         .bold()
                 }
                 
-                NavigationLink(destination: Submission_View()) {
-                    Text("Submit a Property")
+                Spacer()
+                
+                NavigationLink(destination: ContactUs_View()) {
+                    Text("Contact Us")
                         .bold()
                 }
+                
+                NavigationLink(destination: ContactUs_View()) {
+                    Text("Rate Us")
+                        .bold()
+                }
+                
+                Spacer()
                 
                 NavigationLink(destination: ReviewApproval_View()) {
-                    Text("Review/Approval")
+                    Text("Privacy Statement")
                         .bold()
                 }
                 
@@ -32,16 +40,13 @@ struct NavView: View {
                         .bold()
                 }
                 
-                NavigationLink(destination: ContactUs_View()) {
-                    Text("Contact Us")
-                        .bold()
-                }
+                Spacer()
                 
-                NavigationLink(destination: SignInUp_View()) {
+                NavigationLink(destination: NavView()) {
                     Text("Sign In / Sign Up")
                         .bold()
                 }
-                Spacer()
+                
             }
         }
         .navigationTitle(Text("Navigation"))
